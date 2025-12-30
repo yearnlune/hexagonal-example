@@ -1,0 +1,93 @@
+# 최상위 EditorConfig 파일
+root = true
+
+# ------------------------------------------------------------
+# 기본 설정 (모든 언어 공통)
+# ------------------------------------------------------------
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+# 파일 이름 대소문자 구분
+filename_case = lower
+
+# ------------------------------------------------------------
+# Markdown / YAML / JSON 같은 파일은 indent 다르게
+# ------------------------------------------------------------
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 2
+
+[*.yml]
+indent_size = 2
+
+[*.yaml]
+indent_size = 2
+
+[*.json]
+indent_size = 2
+
+# ------------------------------------------------------------
+# Kotlin 전용 설정 (ktlint & IntelliJ 스타일 기준)
+# ------------------------------------------------------------
+[*.kt]
+indent_size = 4
+continuation_indent_size = 4
+
+# 최대 줄 길이
+max_line_length = 120
+
+# import 정렬 규칙
+ij_kotlin_imports_layout = *
+ij_kotlin_imports_sort = true
+ij_kotlin_packages_to_use_import_on_demand = unset
+
+# 패키지명 바로 아래 빈 줄 금지 (권장)
+ij_kotlin_blank_lines_after_package = 1
+
+# 클래스/함수 사이 공백
+ij_kotlin_blank_lines_after_imports = 1
+ij_kotlin_blank_lines_around_class = 1
+ij_kotlin_blank_lines_around_method = 1
+
+# trailing comma 허용 (멀티라인에서 매우 유용)
+ij_kotlin_allow_trailing_comma = true
+
+# 람다 인자 스타일
+ij_kotlin_align_multiline_parameters = true
+
+# use tab characters for indent (false = spaces, recommended)
+indent_style = space
+
+# ------------------------------------------------------------
+# Gradle (Kotlin DSL 스크립트)
+# ------------------------------------------------------------
+[*.gradle.kts]
+indent_size = 4
+continuation_indent_size = 4
+max_line_length = 120
+
+# ------------------------------------------------------------
+# Java (Spring Boot 일부 Java 코드 포함 시)
+# ------------------------------------------------------------
+[*.java]
+indent_size = 4
+continuation_indent_size = 4
+max_line_length = 120
+trim_trailing_whitespace = true
+
+# ------------------------------------------------------------
+# Properties 파일
+# ------------------------------------------------------------
+[*.properties]
+charset = utf-8
+
+# ------------------------------------------------------------
+# Gitignore는 trailing whitespace 허용
+# ------------------------------------------------------------
+[*.gitignore]
+trim_trailing_whitespace = false
